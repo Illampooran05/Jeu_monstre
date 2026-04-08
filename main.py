@@ -4,23 +4,23 @@ import game
 from models import list_Personnage, list_monstre
  
 
-# initilier la base de données
+# initialiser la base de données
 def afficher_header(text: str):
     print("-"*50)
     print(text.center(50))
     print("-"*50)
     
 
-#afficher les choix 
+# afficher les choix
 Choix1 = "Nouvelle partie"
-Choix2 = "afficher les trois meilleurs scores" 
+Choix2 = "Afficher les trois meilleurs scores"
 Choix3 = "Quitter"
 
 def afficher_menu():
-     # Afficher MON EN tete
+    # afficher mon en-tête
     titre = "Jeu de combat de monstres"
     afficher_header(titre)
-     #afficher les choix de partie
+    # afficher les choix de partie
     print("1. " + Choix1)
     print("2. " + Choix2)
     print("3. " + Choix3)
@@ -71,7 +71,7 @@ def créer_equipe_monstre():
 
 def jouer():
     print("Lancement de la nouvelle partie...")
-    #choix du nom de l'utilisateur
+    # choix du nom de l'utilisateur
     nom = input("Entrez votre nom : ")
     print(f"Bienvenue, {nom} ! Créons votre équipe de personnages.")
     #   créer l'équipe de l'utilisateur
@@ -84,7 +84,7 @@ def jouer():
     equipemonstre = créer_equipe_monstre()
     print("Préparez-vous pour le combat contre les monstres !")
 
-    #   lancer les combats (à implémenter dans game.py)
+    #   lancer le combat
     points = game.lancer_combat(equipe, equipemonstre, nom)
     
     if points > 0:
@@ -102,10 +102,9 @@ def lancer_option(choix):
        
     elif choix == 2:
         print("Affichage des trois meilleurs scores...")
-        afficher_scores()  # Appeler la fonction pour afficher les scores (à implémenter)
+        afficher_scores()
 
-
-     #   quitter le jeu    
+    # quitter le jeu
     elif choix == 3:
         print("Quitter le jeu. Au revoir!")
 
@@ -116,7 +115,7 @@ def lancer_option(choix):
 def main():
     afficher_menu()
 
-    # recuperer le choix de l'utilisateur
+    # récupérer le choix de l'utilisateur
     choix = recuperer_choix_utilisateur()
 
     # lance la bonne option en fonction du choix de l'utilisateur

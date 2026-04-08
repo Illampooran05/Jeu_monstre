@@ -1,0 +1,64 @@
+
+#-----------------------------------
+#    JEU DE COMBAT
+#-----------------------------------
+
+
+#1: Initialisation de la base de données (db_init.py)
+       # pour insérer les personnages et monstres dans MongoDB.
+
+
+
+
+
+
+
+
+
+
+#2: Lancement du jeu (main.py)
+        #proposant le menu principal et gérant les interactions. 
+        # 1. Démarrer le jeu
+        # 2. Afficher le classement
+        # 3. Quitter
+
+
+# 2.1 Démarrer le jeu
+        #  Choix nom utilisateur
+        #  Creation de l'equipe
+
+
+# 2.2 Afficher le classement
+
+
+# 2.3 Quitter
+
+
+
+
+
+
+# 3: Gestion des combats (game.py)
+        #gérant la logique du combat.
+# 3.1 Lancer les vagues de combat
+# 3.1.1 
+# 3.2 Terminer les combats et stocker le score
+
+
+
+
+#4: Modélisation des données(models.py)
+        # contenant les classes pour les personnages et les monstres.
+
+# 4.1 Affichage de l'équipe actuelle
+
+
+
+
+
+
+
+#5: Fonctions utilitaires (utils.py)
+        # contenant les fonctions pour l'affichage et la gestion des données.
+
+

@@ -1,6 +1,12 @@
     
 from unicodedata import name
+from db_init import collection_personnages, collection_monstres
 
+#Lire les personnages depuis MongoDB
+list_personnages = list(collection_personnages.find({}, {"_id": 0}))
+
+#Lire les monstres depuis MongoDB
+list_monstres = list(collection_monstres.find({}, {"_id": 0}))
 
 
 list_Personnage=[{"name":"Guerrier","ATK":15, "DEF":10, "PV":100},

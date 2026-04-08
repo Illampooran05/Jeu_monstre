@@ -1,17 +1,12 @@
 # 3: Gestion des combats (game.py)
-        #gérant la logique du combat.
+# gère la logique du combat.
 # 3.1 Lancer les vagues de combat
-# 3.1.1 
 # 3.2 Terminer les combats et stocker le score
 
+# Chaque personnage de l'équipe attaque le monstre et réduit ses PV en fonction de l'attaque et de la défense.
 
 
-     
-
-#- Chaque personnage de l'équipe attaque le monstre et réduit ses PV en fonction de l'attaque et de la défense.
 import random
-
-from main import afficher_menu
 
 
 def attaque_équipe(equipe, equipemonstre):
@@ -38,7 +33,7 @@ def attaque_monstre(equipe, equipemonstre):
 
 
 #- Combat automatisé où les personnages et les monstres s'affrontent jusqu'à ce que l'un des deux camps soit complètement vaincu.
-def Combat_automatisé(equipe, equipemonstre):
+def combat_automatisé(equipe, equipemonstre):
     while any(p['PV'] > 0 for p in equipe) and any(m['PV'] > 0 for m in equipemonstre):
         attaque_équipe(equipe, equipemonstre)  # Les personnages attaquent les monstres
         attaque_monstre(equipe, equipemonstre)  # Les monstres attaquent les personnages
@@ -53,7 +48,7 @@ def Combat_automatisé(equipe, equipemonstre):
 def lancer_combat(equipe, equipemonstre, nom):
     print("Le combat commence !")
     
-    Combat_automatisé(equipe, equipemonstre)
+    combat_automatisé(equipe, equipemonstre)
     
     # Calculer les points basés sur les PV restants de l'équipe
     points = sum(p['PV'] for p in equipe if p['PV'] > 0)
@@ -63,9 +58,6 @@ def lancer_combat(equipe, equipemonstre, nom):
     sauvegarder_score(nom, points)
     
     return points
-
-    # afficher les menu et les options de combat
-    afficher_menu() 
 
 
 
